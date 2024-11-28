@@ -14,8 +14,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
     list-style-type: none;
     text-decoration: none;
@@ -35,17 +33,291 @@ time, mark, audio, video {
     font-family: 'ReadexPro-SemiBold';
     src: url(../assets/font/ReadexPro-SemiBold.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'ReadexPro-Light';
+    src: url(../assets/font/ReadexPro-Light.ttf);
+}
 
 body {
     background-color: #F0ECF0;
 }
 
-div span {
+center {
+    margin: 0 auto;
+}
+
+.padding {
+    padding: 0 40px;
+}
+
+/* ------ MENU MOBILE ------ */
+
+#head-top > div > a {
     font-family: 'ReadexPro-Regular';
     text-transform: uppercase;
     color: #333643;
+    font-size: 1.3rem;
+    height: 60px;
+    line-height: 60px;
 }
 
-div i {
+.burger-menu-button {
+    position: absolute;
     color: #333643;
+    font-size: 1.3rem;
+    right: 40px;
+    top: 22px;
+    cursor: pointer;
+}
+
+.burger-menu {
+    display: none;
+    height: 70vh;
+    background-color: #F0ECF0;
+    flex-direction: column;
+    text-align: center;
+}
+
+.burger-menu.open {
+    display: flex;
+}
+
+.burger-menu > nav {
+    margin:auto;
+}
+
+.burger-menu > nav > ul > li > a {
+    color: #333643;
+    font-family: 'ReadexPro-Regular';
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    line-height: 100px;
+    height: 100px;
+}
+
+.divider {
+    height: 3px;
+    background-color: #333643;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ------ HOMEPAGE MOBILE ------ */
+
+#hero-images {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 5px;
+    justify-content: center;
+}
+
+.home-img-1 {
+    width: 218px;
+}
+
+.home-img-2 {
+    width: 155px;
+}
+
+#hero-images figure:last-child {
+    padding: 8px 10px 0 0;
+}
+
+#quick-infos {
+    height: 220px;
+    background-color: #333643;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#quick-infos span {
+    color: #F0ECF0;
+    font-family: 'ReadexPro-Medium';
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.pp-bong {
+    width: 100px;
+}
+
+#profile {
+    display: flex;
+    font-size: 1.2rem;
+    color: #333643;
+    font-family: 'ReadexPro-Regular'; 
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid #333643;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile img {
+    padding: 0 10px 0 20px;
+}
+
+#profile h2 {
+    margin-left: 8px;
+}
+
+#profile i {
+    color: #333643;
+    margin: 0 8px;
+}
+
+#profile a {
+    color: #333643;
+    font-family: 'ReadexPro-Light';
+    font-size: 0.9rem;
+    height: 34px;
+    line-height: 34px;
+}
+
+#projects {
+    height: 220px;
+    background-color: #F0ECF0;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#projects span {
+    color: #333643;
+    font-family: 'ReadexPro-Medium';
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+#projects-img img {
+    width: 400px;
+    cursor: pointer;
+}
+
+#projects-img {
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+
+/* ------ MENU DESKTOP ------ */
+
+.row-menu {
+    display: none;
+}
+
+.row-menu nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.row-menu nav ul li a {
+    color: #333643;
+    font-size: 1.5rem;
+    font-family: 'ReadexPro-Regular';
+    height: 80px;
+    line-height: 80px;
+}
+
+
+/* ------ MEDIA QUERY ------- */
+
+@media(min-width: 600px){
+    #projects-img img {
+        width: 580px;
+    }
+
+    #hero-images {
+        gap: 10px;
+    }
+    .home-img-1 {
+        width: 327px;
+    }
+    .home-img-2 {
+        width: 229px;
+    }
+}
+
+@media(min-width: 700px){
+    #projects-img img {
+        width: 680px;
+    }
+
+    #hero-images {
+        gap: 20px;
+    }
+    .home-img-1 {
+        width: 380px;
+    }
+    .home-img-2 {
+        width: 266px;
+    }
+
+    .pp-bong {
+        width: 133px;
+    }
+
+}
+
+@media(min-width: 800px){
+    .bong, .burger-menu-button{
+        display: none;
+    }
+    .row-menu {
+        display: block;
+    }
+    #projects-img img {
+        width: 780px;
+    }
+}
+
+@media (min-width: 1000px){
+    #projects-img img {
+        width: 980px;
+    }
+
+    #hero-images {
+        gap: 20px;
+        padding-top: 40px;
+    }
+    .home-img-1 {
+        width: 545px;
+    }
+    .home-img-2 {
+        width: 384px;
+    }
+    .pp-bong {
+        width: 200px;
+    }
+    #profile {
+        gap: 30px;
+    }
+    #profile a {
+        color: #333643;
+        font-family: 'ReadexPro-Light';
+        font-size: 1.2rem;
+        height: 50px;
+        line-height: 50px;
+    }
+    #profile ul {
+        padding-top: 30px;
+    }
+}
+@media (min-width: 1200px){
+    #projects-img img {
+        width: 1080px;
+    }
+    .pp-bong {
+        width: 250px;
+    }
 }
