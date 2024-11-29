@@ -152,13 +152,14 @@ center {
     color: #333643;
     font-family: 'ReadexPro-Regular'; 
     padding: 40px 0 20px 0;
-    border-bottom: 1px solid #333643;
     align-items: center;
     justify-content: center;
 }
 
 #profile img {
-    padding: 0 10px 0 20px;
+    padding: 0 10px 0 10px;
+	box-shadow: 30px 30px 0 #33364327, -30px -30px 0 #33364327;
+    /* display: block; */
 }
 
 #profile h2 {
@@ -196,8 +197,10 @@ center {
 }
 
 #projects-img img {
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     cursor: pointer;
+    transition: all ease-in-out 0.25s;
 }
 
 #projects-img {
@@ -206,9 +209,36 @@ center {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
 }
 
+#projects-img figure {
+    position: relative;
+}
+
+.span-text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-transform: capitalize;
+    position: absolute;
+    color: #333643;
+    font-family: 'ReadexPro-Regular';
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.30s;
+    background-color:rgba(255, 255, 255, 0.4);
+    padding: 8px;
+}
+
+#projects-img figure:hover img {
+    filter: blur(3px);
+}
+
+#projects-img figure:hover .span-text {
+    opacity: 1;
+}
 
 /* ------ MENU DESKTOP ------ */
 
@@ -228,6 +258,33 @@ center {
     height: 80px;
     line-height: 80px;
 }
+
+.divider-2 {
+    margin: 20px 0 10px 0;
+    height: 1px;
+    background-color: #333643;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.copyright i {
+    font-size: 0.7rem;
+    color: #333643;
+}
+
+.copyright p {
+    color: #333643;
+    font-family: 'ReadexPro-Light';
+    font-size: 0.7rem;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
 
 
 /* ------ MEDIA QUERY ------- */
@@ -314,10 +371,23 @@ center {
     }
 }
 @media (min-width: 1200px){
+    #projects-img {
+        flex-direction: row;
+    }
+
     #projects-img img {
-        width: 1080px;
+        max-width: 380px;
     }
     .pp-bong {
         width: 250px;
+    }
+    .span-text {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 1400px){
+    #projects-img img {
+        max-width: 500px;
     }
 }
