@@ -17,6 +17,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
     list-style-type: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 @font-face {
@@ -114,6 +115,7 @@ center {
 
 #hero {
     padding-top: 16px;
+    animation: reveal ease-in 1s;
 }
 
 #hero h1 {
@@ -294,10 +296,11 @@ center {
    }
 
    /* Page My projects */
-   .projects {
-    display: flex;
-    gap: 10px;
+   .projects figure img {
+    width: 40%;
+    margin: 0 auto;
 }
+
 
 }
 
@@ -407,27 +410,62 @@ center {
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    overflow: hidden;
 }
 
 .projects img {
     width: 100%;
     display: block;
-    transition: all ease .25s;
+    transition: all ease .5s;
+    transform: scale(1);
+    margin-top: 16px;
 }
 .projects p {
-    padding-bottom: 20px;
+    padding-bottom: 8px;
     color: #333643;
     transition: all ease .25s;
 }
 
-.projects p:hover {
-    text-decoration: underline;
-}
-
-.projects img:hover {
+.projects figure img:hover {
     filter: blur(3px);
 }
 
-.projects a {
-    /* position: absolute; */
+.projects .button {
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 16px;
+}
+
+
+
+/* ------ ANIMATION ----- */
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+/* ----- SINERU PROJECTS ----- */
+
+.sineru-center {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+}
+
+.sineru-center img {
+    display: block;
+    margin-bottom: 9px;
+    width: 100%;
 }
