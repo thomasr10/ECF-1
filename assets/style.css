@@ -97,7 +97,7 @@ center {
 }
 
 .divider {
-    height: 3px;
+    height: 2px;
     background-color: #333643;
     width: 90%;
     margin-left: auto;
@@ -132,11 +132,11 @@ center {
 }
 
 .button {
-    height: 100%;
+    height: 40px;
     width: 120px;
     background-color: #333643;
-    border: 2px solid #F0ECF0;
     border-radius: 8px;
+    margin-top: 12px;
 }
 .button a {
     font-size: 0.9rem;
@@ -147,6 +147,8 @@ center {
     font-family: 'ReadexPro-Regular';
     text-transform: capitalize;
     transition: all ease 0.25s;
+    line-height: 40px;
+    height: 40px;
 }
 
 .button:hover a {
@@ -204,6 +206,11 @@ center {
     height: 80px;
     line-height: 80px;
     text-transform: capitalize;
+    display: block;
+}
+
+.row-menu nav ul li:hover a {
+    text-decoration: underline;
 }
 
 
@@ -260,6 +267,8 @@ center {
         height: 60px;
     }
     .button a {
+        height: 60px;
+        line-height: 60px;
         font-size: 1.2rem;
     }
     .inspiration-img {
@@ -292,7 +301,15 @@ center {
 
    .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+   }
+
+   #contact {
+    display: flex;
+    justify-content: center;
+   }
+   #contact a {
+    padding: 0 40px;
    }
 
    /* Page My projects */
@@ -302,16 +319,34 @@ center {
 }
 
 
+.text-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 40px;
 }
+
+}
+
+@media (min-width: 1100px){
+    .image-2 img {
+        width: 90%;
+    }
+}
+@media(min-width: 1100px){
+    .sineru-landscape img {
+        width: 87%;
+     
+    }
+}
+
 
 
 
 /* ------ ABOUT ME ------ */
 
-.bong-img {
-    width: 20%;
-    float: right;
-}
 
 .about-me-text h2 {
     font-size: 1.5rem;
@@ -333,7 +368,7 @@ center {
 }
 
 .icones figure {
-    width: 32px;
+    width: 50px;
     padding: 0 8px;
 }
 
@@ -341,9 +376,10 @@ center {
     width: 100%;
 }
 
+
 .about-me-text h3 {
     font-size: 1.2rem;
-    padding: 16px 0 8px 0;
+    padding: 20px 0 8px 0;
     color: #333643;
     font-family: 'ReadexPro-SemiBold';
     text-transform: capitalize;
@@ -354,20 +390,20 @@ center {
     color: #333643;
     font-family: 'ReadexPro-SemiBold';
     text-transform: capitalize;
+    padding: 8px;
 }
 
 
-.about-me-text img {
-    width: 100%;
-}
 
-.about-me-text a {
+#contact a {
     font-family: 'ReadexPro-Light';
     font-size: 1rem;
     line-height: 32px;
     padding-top: 8px;
     color: #333643;
     display: block;
+  
+    transition: all ease-in 0.5s;
 }
 
 .about-me-text i {
@@ -376,6 +412,11 @@ center {
     font-size: 1.2rem;
     color: #333643;
 }
+
+#contact a:hover  {
+    text-decoration: underline;
+}
+
 
 .inspiration figure {
     width: 90%;
@@ -424,6 +465,9 @@ center {
     padding-bottom: 8px;
     color: #333643;
     transition: all ease .25s;
+    font-family: 'ReadexPro-Light';
+    font-size: 1rem;
+    margin-top: 16px;
 }
 
 .projects figure img:hover {
@@ -432,8 +476,7 @@ center {
 
 .projects .button {
     margin: 0 auto;
-    height: 40px;
-    line-height: 40px;
+    
     margin-bottom: 16px;
 }
 
@@ -451,17 +494,34 @@ center {
 }
 
 
+.reveal {
+    opacity: 0;
+    transform: translateY(-30px);
+    
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: 1s;
+}
 
 
 
 
 /* ----- SINERU PROJECTS ----- */
 
+section > h2 {
+    margin: 16px 0;
+    color: #333643;
+    font-family: 'ReadexPro-SemiBold';
+}
+
 .sineru-center {
     justify-content: center;
     align-items: center;
     display: flex;
-    gap: 2rem;
+    gap: 0.5rem;
 }
 
 .sineru-center img {
@@ -469,3 +529,33 @@ center {
     margin-bottom: 9px;
     width: 100%;
 }
+
+.sineru-center iframe {
+    margin-bottom: 10px;
+}
+
+
+.sineru-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 8px
+}
+.sineru-grid img {
+    width: 100%;
+}
+
+.copyright  {
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'ReadexPro-Light';
+    margin: 8px 0;
+}
+
+.copyright .divider {
+    margin-top: 16px;
+}
+
+/* ---- TUA PROJECT ----- */
+
+
